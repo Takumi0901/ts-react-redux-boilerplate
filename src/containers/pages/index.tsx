@@ -1,19 +1,9 @@
-import * as React from 'react'
 import * as Redux from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import TempIndex from 'src/components/templates'
 
-interface Props {}
-
-class PageIndex extends React.Component<Props> {
-  constructor(props) {
-    super(props)
-  }
-
-  public render() {
-    return <div>Hello World!!</div>
-  }
-}
+export interface Props {}
 
 const mapStateToProps = () => {
   return {}
@@ -27,5 +17,5 @@ export default withRouter<any>(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(PageIndex)
+  )(TempIndex)
 )
