@@ -1,1 +1,5 @@
 .idea
+public/
+.awcache
+node_modules/
+package-lock.json

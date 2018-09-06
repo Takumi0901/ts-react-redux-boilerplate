@@ -1,0 +1,22 @@
+{
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "extends": ["tslint-config-standard", "tslint-config-prettier"],
+  "rules": {
+    "import-sources-order": false,
+    "interface-name": false ,
+    "quotemark": false ,
+    "member-access": false,
+    "indent": [ true, "spaces", 2 ],
+    "max-line-length": [
+      true,
+      160
+    ],
+    "prettier": [
+      true, {
+        "printWidth": 120,
+        "singleQuote": true,
+        "semi": false
+      }
+    ]
+  }
+}

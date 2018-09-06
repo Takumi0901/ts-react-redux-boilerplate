@@ -1,0 +1,63 @@
+{
+  "name": "ts-react-redux-boilerplate",
+  "version": "1.0.0",
+  "description": "first commit",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hotOnly",
+    "build": "./node_modules/webpack/bin/webpack.js --mode=development",
+    "tslint": "tslint --fix **/*.tsx",
+    "precommit": "lint-staged",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Takumi0901/ts-react-redux-boilerplate.git"
+  },
+  "author": "takumi kimura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Takumi0901/ts-react-redux-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Takumi0901/ts-react-redux-boilerplate#readme",
+  "dependencies": {
+    "@types/node": "^10.9.4",
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "@types/react-redux": "^6.0.7",
+    "@types/redux": "^3.6.0",
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "react-hot-loader": "^4.3.6",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.0",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-plugin-prettier": "^1.3.0",
+    "typescript": "^3.0.3",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
+  }
+}
