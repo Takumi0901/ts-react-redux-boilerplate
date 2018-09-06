@@ -1,9 +1,11 @@
 import * as React from 'react'
-import { hot } from 'react-hot-loader'
+import * as Redux from 'redux'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 interface Props {}
 
-class Index extends React.Component<Props> {
+class App extends React.Component<Props> {
   constructor(props) {
     super(props)
   }
@@ -13,4 +15,17 @@ class Index extends React.Component<Props> {
   }
 }
 
-export default hot(module)(Index)
+const mapStateToProps = () => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return Redux.bindActionCreators({}, dispatch)
+}
+
+export default withRouter<any>(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+)

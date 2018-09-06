@@ -1,0 +1,25 @@
+import * as React from 'react'
+import { Provider } from 'react-redux'
+import { hot } from 'react-hot-loader'
+import { BrowserRouter as Router } from 'react-router-dom'
+import routes from '../routes'
+
+interface Props {
+  store: any
+}
+
+class Index extends React.Component<Props> {
+  constructor(props) {
+    super(props)
+  }
+
+  public render() {
+    return (
+      <Provider store={this.props.store}>
+        <Router>{routes}</Router>
+      </Provider>
+    )
+  }
+}
+
+export default hot(module)(Index)
