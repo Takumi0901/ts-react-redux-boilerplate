@@ -6,8 +6,8 @@ import TempIndex from 'src/components/templates'
 import { ICounter } from 'src/redux/types/counter'
 
 export interface Props {
-  increment: () => void
-  decrement: () => void
+  increment(count: number): void
+  decrement(count: number): void
   counter: ICounter
 }
 

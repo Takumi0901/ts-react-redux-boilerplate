@@ -6,8 +6,8 @@ const CounterActions: React.SFC<Props> = ({ counter, increment, decrement }) => 
     <React.Fragment>
       <p>{counter.count}</p>
       <p>
-        <button onClick={() => increment()}>+</button>
-        <button onClick={() => decrement()}>-</button>
+        <button onClick={() => increment(1)}>+</button>
+        <button onClick={() => decrement(-1)}>-</button>
       </p>
     </React.Fragment>
   )
