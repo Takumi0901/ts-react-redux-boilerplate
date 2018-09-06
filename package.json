@@ -7,7 +7,7 @@
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hotOnly",
     "build": "./node_modules/webpack/bin/webpack.js --mode=development",
     "tslint": "tslint --fix **/*.tsx",
-    "precommit": "lint-staged",
+    "_precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
@@ -29,6 +29,7 @@
   "dependencies": {
     "@types/node": "^10.9.4",
     "babel-polyfill": "^6.26.0",
+    "immutable": "^3.8.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
@@ -36,7 +37,9 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "typescript-fsa": "^3.0.0-beta-2",
+    "typescript-fsa-reducers": "^0.4.5"
   },
   "devDependencies": {
     "@types/react": "^16.4.13",

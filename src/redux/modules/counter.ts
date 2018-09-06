@@ -1,37 +1,28 @@
-import { ICounter, ICounterAction } from 'src/redux/types/counter'
+import { ICounter } from 'src/redux/types/counter'
+import { CounterRecord } from 'src/redux/records/counter'
+import actionCreatorFactory from 'typescript-fsa'
+import { reducerWithInitialState } from 'typescript-fsa-reducers/dist'
+
 // Action types
-export const INCREMENT: string = 'counter/INCREMENT'
-export const DECREMENT: string = 'counter/DECREMENT'
-
-export function increment(): ICounterAction {
-  return {
-    type: INCREMENT
-  }
+const actionCreator = actionCreatorFactory()
+export enum ActionTypes {
+  INCREMENT = 'counter/INCREMENT',
+  DECREMENT = 'counter/DECREMENT'
 }
 
-export function decrement(): ICounterAction {
-  return {
-    type: DECREMENT
-  }
-}
+export const increment = actionCreator<void>(ActionTypes.INCREMENT)
+export const decrement = actionCreator<void>(ActionTypes.DECREMENT)
 
-const initialState: ICounter = {
-  count: 1
-}
+const initialState = new CounterRecord()
 
 // Reducer
-export function countUpReducer(state = initialState, action?: ICounterAction) {
-  const { type } = action
-  switch (type) {
-    case INCREMENT:
-      return {
-        count: state.count + 1
-      }
-    case DECREMENT:
-      return {
-        count: state.count - 1 > 0 ? state.count - 1 : 0
-      }
-    default:
-      return state
-  }
-}
+export const countUpReducer = reducerWithInitialState(initialState)
+  .case(increment, state => {
+    console.log('*****************')
+    console.log(state)
+    console.log('*****************')
+    return { count: state.count + 1 }
+  })
+  .case(decrement, state => {
+    return { count: state.count - 1 > 0 ? state.count - 1 : 0 }
+  })
