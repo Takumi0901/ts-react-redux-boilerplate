@@ -2,6 +2,8 @@ import * as React from 'react'
 import * as Redux from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import Header from 'src/components/organisms/Header'
+import Footer from 'src/components/organisms/Footer'
 
 interface Props {}
 
@@ -13,9 +15,9 @@ class App extends React.Component<Props> {
   public render() {
     return (
       <div>
-        <div>Header</div>
+        <Header />
         {this.props.children}
-        <div>Footer</div>
+        <Footer />
       </div>
     )
   }

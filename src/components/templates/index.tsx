@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Props } from 'src/containers/pages'
 import { Helmet } from 'react-helmet'
+import CounterActions from 'src/components/molecules/CounterActions'
 
 class TempIndex extends React.Component<Props> {
   constructor(props) {
@@ -13,7 +14,8 @@ class TempIndex extends React.Component<Props> {
         <Helmet>
           <title>title</title>
         </Helmet>
-        Hello World!!
+        <h2>Hello World!!</h2>
+        <CounterActions {...this.props} />
       </div>
     )
   }
