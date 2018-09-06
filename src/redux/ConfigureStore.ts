@@ -1,6 +1,6 @@
 import * as Redux from 'redux'
-import rootReducer from './RootReducer'
-import { IStore } from './IStore'
+import rootReducer from 'src/redux/RootReducer'
+import { IStore } from 'src/redux/IStore'
 
 const configureStore = (initialState?: IStore): Redux.Store<IStore> => {
   let composes

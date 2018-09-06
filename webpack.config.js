@@ -14,11 +14,6 @@ module.exports = {
   devtool: 'source-map',
 
   mode: 'none',
-
-  resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-  },
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -57,6 +52,14 @@ module.exports = {
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
     ]
+  },
+
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: {
+      "src": path.resolve(__dirname, './src')
+    }
   },
 
   devServer: {

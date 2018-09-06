@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Provider } from 'react-redux'
 import { hot } from 'react-hot-loader'
 import { BrowserRouter as Router } from 'react-router-dom'
-import routes from '../routes'
+import routes from 'src/routes'
 
 interface Props {
   store: any

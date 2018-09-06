@@ -1,13 +1,15 @@
 import * as React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-// HOC
-import App from './containers/App'
+import App from 'src/containers/App'
+import PageIndex from 'src/containers/pages/index'
 
 export default (
   <React.Fragment>
-    <Switch>
-      <Route exact path="/" component={App} />
-    </Switch>
+    <App>
+      <Switch>
+        <Route exact path="/" component={PageIndex} />
+      </Switch>
+    </App>
   </React.Fragment>
 )
