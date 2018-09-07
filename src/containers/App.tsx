@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import Header from 'src/components/organisms/Header'
 import Footer from 'src/components/organisms/Footer'
+import baseStyle from 'src/styles/base'
+import { ThemeProvider, theme } from 'src/styles'
 
 interface Props {}
 
@@ -13,12 +15,15 @@ class App extends React.Component<Props> {
   }
 
   public render() {
+    baseStyle(theme)
     return (
-      <div>
-        <Header />
-        {this.props.children}
-        <Footer />
-      </div>
+      <ThemeProvider theme={theme}>
+        <React.Fragment>
+          <Header />
+          {this.props.children}
+          <Footer />
+        </React.Fragment>
+      </ThemeProvider>
     )
   }
 }
