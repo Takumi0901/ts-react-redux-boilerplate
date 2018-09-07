@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ClassNames from 'classnames'
-import styled, { css } from 'src/styles'
+import styled, { css } from 'src/styles/index'
 
 interface CardProps {
   color?: string
@@ -34,7 +34,7 @@ export const CardContent: React.SFC<CardContentProps> = props => {
 }
 
 export const ScCard = styled.div`
-  ${({ theme, color = 'white' }) => css`
+  ${({ theme, color = 'white' }: any) => css`
     background: ${theme.color[color]};
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     position: relative;

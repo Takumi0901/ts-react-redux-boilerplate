@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ClassNames from 'classnames'
-import styled from 'src/styles'
+import styled from 'src/styles/index'
 
 interface Props {
   gutters?: boolean
@@ -52,7 +52,7 @@ export const ScGrid = styled.div`
   ${({ direction }: any) => direction && getGridDirection(direction)};
 `
 
-const getGridVAlign = (vAlign): string => {
+const getGridVAlign = (vAlign: any): any => {
   if (vAlign === 'top') {
     return `
       align-items: flex-start;
@@ -76,7 +76,7 @@ const getGridVAlign = (vAlign): string => {
   }
 }
 
-const getGridAlign = (align): string => {
+const getGridAlign = (align: string): any => {
   if (align === 'left') {
     return `
       justify-content: flex-start;
@@ -96,7 +96,7 @@ const getGridAlign = (align): string => {
   }
 }
 
-const getGridDirection = (direction): string => {
+const getGridDirection = (direction: string): any => {
   if (direction === 'row') {
     return `
       flex-direction: row;

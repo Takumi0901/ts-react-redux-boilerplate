@@ -9,7 +9,7 @@ interface Props {
 }
 
 class Index extends React.Component<Props> {
-  constructor(props) {
+  constructor(props: any) {
     super(props)
   }
 

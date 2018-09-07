@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ClassNames from 'classnames'
-import styled from 'src/styles'
+import styled from 'src/styles/index'
 
 interface Props {
   size?: number
@@ -58,7 +58,7 @@ const getGridGuttersSize = ({ size, theme }: any) => {
   }
 }
 
-const getGridMargin = (theme): any => {
+const getGridMargin = (theme: any) => {
   return `
     .grid-margin > & {
       margin-bottom: ${theme.base.size * 2}px;
@@ -66,7 +66,7 @@ const getGridMargin = (theme): any => {
   `
 }
 
-const getGridQuery = (theme): any => {
+const getGridQuery = (theme: any) => {
   return `
     @media (max-width: ${theme.base.viewport.desktop}px) {
       .grid-query > & {
@@ -83,7 +83,7 @@ const getGridQuery = (theme): any => {
   `
 }
 
-const getGridQueryCol2 = (theme): any => {
+const getGridQueryCol2 = (theme: any) => {
   return `
     @media (max-width: ${theme.base.viewport.desktop}px) {
       .grid-query-col2 > & {

@@ -10,7 +10,7 @@ import { ThemeProvider, theme } from 'src/styles'
 interface Props {}
 
 class App extends React.Component<Props> {
-  constructor(props) {
+  constructor(props: any) {
     super(props)
   }
 
@@ -32,7 +32,7 @@ const mapStateToProps = () => {
   return {}
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch: any) => {
   return Redux.bindActionCreators({}, dispatch)
 }
 
