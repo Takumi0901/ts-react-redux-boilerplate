@@ -14,7 +14,6 @@ class TempIndex extends React.Component<Props> {
         <Helmet>
           <title>title</title>
         </Helmet>
-        <h2>Hello World!!</h2>
         <CounterActions {...this.props} />
       </div>
     )

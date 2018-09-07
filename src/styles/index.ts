@@ -69,11 +69,11 @@ export const theme = {
     black: '#333',
     white: '#fff',
     grey: '#626262',
-    primary: '#4BA0E0',
-    info: '#43e5d3',
-    action: '#4174c1',
-    warning: '#EA9137',
-    caution: '#db4437'
+    primary: '#D35BFF',
+    info: '#3273DC',
+    action: '#00D1B1',
+    warning: '#FFDD56',
+    caution: '#FF385F'
   },
   grid: {
     col: BASE.gridCol,

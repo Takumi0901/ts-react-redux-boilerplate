@@ -29,6 +29,7 @@
   "dependencies": {
     "@types/node": "^10.9.4",
     "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.6",
     "immutable": "^4.0.0-rc.9",
     "polished": "^2.0.3",
     "react": "^16.4.2",
