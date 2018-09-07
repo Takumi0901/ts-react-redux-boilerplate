@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ClassNames from 'classnames'
-import styled from 'src/styles/index'
+import styled, { SCThemeProps } from 'src/styles/index'
 
 interface Props {
   gutters?: boolean
@@ -13,6 +13,8 @@ interface Props {
   queryCol2?: boolean
   style?: { [key: string]: string }
 }
+
+type ICompProps = SCThemeProps<Props>
 
 const Grid: React.SFC<Props> = props => {
   const { classes, gutters, margin, query, children, queryCol2 } = props
@@ -39,7 +41,7 @@ export const ScGrid = styled.div`
   list-style: none;
   margin: 0;
   padding: 0;
-  ${({ theme, query }: any) =>
+  ${({ theme, query }: ICompProps) =>
     query &&
     `
     display: block;
@@ -47,12 +49,12 @@ export const ScGrid = styled.div`
       display: flex;   
     }
   `};
-  ${({ vAlign }: any) => vAlign && getGridVAlign(vAlign)};
-  ${({ align }: any) => align && getGridAlign(align)};
-  ${({ direction }: any) => direction && getGridDirection(direction)};
+  ${({ vAlign }: ICompProps) => vAlign && getGridVAlign(vAlign)};
+  ${({ align }: ICompProps) => align && getGridAlign(align)};
+  ${({ direction }: ICompProps) => direction && getGridDirection(direction)};
 `
 
-const getGridVAlign = (vAlign: any): any => {
+const getGridVAlign = (vAlign: string) => {
   if (vAlign === 'top') {
     return `
       align-items: flex-start;
@@ -76,7 +78,7 @@ const getGridVAlign = (vAlign: any): any => {
   }
 }
 
-const getGridAlign = (align: string): any => {
+const getGridAlign = (align: string) => {
   if (align === 'left') {
     return `
       justify-content: flex-start;
@@ -96,7 +98,7 @@ const getGridAlign = (align: string): any => {
   }
 }
 
-const getGridDirection = (direction: string): any => {
+const getGridDirection = (direction: string) => {
   if (direction === 'row') {
     return `
       flex-direction: row;

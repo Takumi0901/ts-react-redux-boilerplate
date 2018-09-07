@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ClassNames from 'classnames'
-import styled, { css } from '../../../styles/index'
+import styled, { css, SCThemeProps } from '../../../styles/index'
 
 interface Props {
   name: string
@@ -12,6 +12,8 @@ interface Props {
   classes?: string[]
   style?: { [key: string]: string }
 }
+
+type ICompProps = SCThemeProps<Props>
 
 const Index: React.SFC<Props> = props => {
   const { name, onClick, classes } = props
@@ -25,7 +27,7 @@ const Index: React.SFC<Props> = props => {
 export default Index
 
 export const ScButton = styled.button`
-  ${({ theme, sizeH = 32, fontSize = 14, color = 'primary' }: any) => css`
+  ${({ theme, sizeH = 32, fontSize = 14, color = 'primary' }: ICompProps) => css`
     position: relative;
     display: inline-block;
     height: ${sizeH}px;

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ClassNames from 'classnames'
-import styled, { css } from 'src/styles/index'
+import styled, { SCThemeProps, css } from 'src/styles/index'
 
 interface CardProps {
   color?: string
@@ -14,6 +14,9 @@ interface CardContentProps {
   classes?: string[]
   style?: { [key: string]: string }
 }
+
+type ICardCompProps = SCThemeProps<CardProps>
+type ICardContentCompProps = SCThemeProps<CardContentProps>
 
 export const Card: React.SFC<CardProps> = props => {
   const { children } = props
@@ -34,7 +37,7 @@ export const CardContent: React.SFC<CardContentProps> = props => {
 }
 
 export const ScCard = styled.div`
-  ${({ theme, color = 'white' }: any) => css`
+  ${({ theme, color = 'white' }: ICardCompProps) => css`
     background: ${theme.color[color]};
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     position: relative;
@@ -46,7 +49,7 @@ export const ScCard = styled.div`
 `
 
 export const ScCardContent = styled.div`
-  ${({ theme, contentH }: any) => css`
+  ${({ theme, contentH }: ICardContentCompProps) => css`
     padding: ${theme.base.size * 2}px;
     min-height: ${contentH ? contentH + 'px' : 'auto'};
     max-height: ${contentH ? contentH + 'px' : 'auto'};

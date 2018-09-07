@@ -1,5 +1,4 @@
 import * as styledComponents from 'styled-components'
-
 const {
   default: styled,
   css,
@@ -84,5 +83,7 @@ export const theme = {
   }
 }
 
+type SCThemeProps<P> = styledComponents.ThemedStyledProps<P, IThemeInterface>
+
 export default styled
-export { css, injectGlobal, keyframes, ThemeProvider }
+export { css, injectGlobal, keyframes, ThemeProvider, SCThemeProps }

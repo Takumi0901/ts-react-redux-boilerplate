@@ -1,12 +1,14 @@
 import * as React from 'react'
 import * as ClassNames from 'classnames'
-import styled from 'src/styles/index'
+import styled, { IThemeInterface, SCThemeProps } from 'src/styles/index'
 
 interface Props {
   size?: number
   classes?: string[]
   style?: { [key: string]: string }
 }
+
+type ICompProps = SCThemeProps<Props>
 
 const GridCol: React.SFC<Props> = props => {
   const { classes, children } = props
@@ -22,20 +24,20 @@ export default GridCol
 export const ScGridCol = styled.div`
   box-sizing: border-box;
   flex-shrink: 0;
-  ${({ size, theme }: any) => size && getGridSize({ size: size, theme: theme })};
-  ${({ size, theme }: any) => getGridGuttersSize({ size: size, theme: theme })};
-  ${({ theme }) => getGridMargin(theme)};
-  ${({ theme }) => getGridQuery(theme)};
-  ${({ theme }) => getGridQueryCol2(theme)};
+  ${({ size, theme }: ICompProps) => size && getGridSize({ size: size, theme: theme })};
+  ${({ size, theme }: ICompProps) => getGridGuttersSize({ size: size, theme: theme })};
+  ${({ theme }: ICompProps) => getGridMargin(theme)};
+  ${({ theme }: ICompProps) => getGridQuery(theme)};
+  ${({ theme }: ICompProps) => getGridQueryCol2(theme)};
 `
 
-const getGridSize = ({ size, theme }: any) => {
+const getGridSize = ({ size, theme }: ICompProps) => {
   return `
     width: ${theme.grid.colWidth * size}%;
   `
 }
 
-const getGridGuttersSize = ({ size, theme }: any) => {
+const getGridGuttersSize = ({ size, theme }: ICompProps) => {
   if (size) {
     return `
       .grid-gutters > & {
@@ -58,7 +60,7 @@ const getGridGuttersSize = ({ size, theme }: any) => {
   }
 }
 
-const getGridMargin = (theme: any) => {
+const getGridMargin = (theme: IThemeInterface) => {
   return `
     .grid-margin > & {
       margin-bottom: ${theme.base.size * 2}px;
@@ -66,7 +68,7 @@ const getGridMargin = (theme: any) => {
   `
 }
 
-const getGridQuery = (theme: any) => {
+const getGridQuery = (theme: IThemeInterface) => {
   return `
     @media (max-width: ${theme.base.viewport.desktop}px) {
       .grid-query > & {
@@ -83,7 +85,7 @@ const getGridQuery = (theme: any) => {
   `
 }
 
-const getGridQueryCol2 = (theme: any) => {
+const getGridQueryCol2 = (theme: IThemeInterface) => {
   return `
     @media (max-width: ${theme.base.viewport.desktop}px) {
       .grid-query-col2 > & {
