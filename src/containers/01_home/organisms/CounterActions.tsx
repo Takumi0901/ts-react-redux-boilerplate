@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { Props } from 'src/containers/pages'
-import Button from 'src/components/atoms/button'
+import { Props } from 'src/containers/01_home/Home'
+import Button from 'src/components/atoms/button/index'
 import GridCol from 'src/components/atoms/grid/GridCol'
-import Grid from 'src/components/atoms/grid'
-import { Card, CardContent } from 'src/components/atoms/card/'
+import Grid from 'src/components/atoms/grid/index'
+import { Card, CardContent } from 'src/components/atoms/card/index'
 
 const CounterActions: React.SFC<Props> = ({ counter, increment, decrement }) => {
   return (

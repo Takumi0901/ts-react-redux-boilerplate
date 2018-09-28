@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Props } from 'src/containers/pages'
+import { Props } from '../Home'
 import { Helmet } from 'react-helmet'
-import CounterActions from 'src/components/molecules/CounterActions'
+import CounterActions from '../organisms/CounterActions'
 
 class TempIndex extends React.Component<Props> {
   constructor(props: any) {

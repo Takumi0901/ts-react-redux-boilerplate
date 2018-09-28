@@ -2,7 +2,7 @@ import * as Redux from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { increment, decrement } from 'src/redux/modules/counter'
-import TempIndex from 'src/components/templates'
+import TempHome from 'src/containers/01_home/templates/TempHome'
 import { ICounter } from 'src/redux/types/counter'
 import { IStore } from 'src/redux/IStore'
 
@@ -26,5 +26,5 @@ export default withRouter<any>(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(TempIndex)
+  )(TempHome)
 )

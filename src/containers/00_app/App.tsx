@@ -2,10 +2,10 @@ import * as React from 'react'
 import * as Redux from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import Header from 'src/components/organisms/Header'
-import Footer from 'src/components/organisms/Footer'
+import Header from 'src/containers/00_app/organisms/Header'
+import Footer from 'src/containers/00_app/organisms/Footer'
 import baseStyle from 'src/styles/base'
-import { ThemeProvider, theme } from 'src/styles'
+import { ThemeProvider, theme } from 'src/styles/index'
 
 interface Props {}
 

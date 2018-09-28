@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/Takumi0901/ts-react-redux-boilerplate#readme",
   "dependencies": {
-    "@types/node": "^10.9.4",
+    "@types/node": "^9.6.7",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
     "immutable": "^4.0.0-rc.9",
@@ -69,6 +69,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.2",
+    "babel-preset-es2015": "^6.24.1",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
