@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
 module.exports = {
-  entry: ['babel-polyfill', './src/TempHome.tsx'],
+  entry: ['babel-polyfill', './src/index.tsx'],
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
