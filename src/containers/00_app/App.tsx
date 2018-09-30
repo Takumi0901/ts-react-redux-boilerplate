@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as Redux from 'redux'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import Header from 'src/containers/00_app/organisms/Header'
 import Footer from 'src/containers/00_app/organisms/Footer'
 import baseStyle from 'src/styles/base'
@@ -20,6 +20,14 @@ class App extends React.Component<Props> {
       <ThemeProvider theme={theme}>
         <React.Fragment>
           <Header />
+          <ul>
+            <li>
+              <Link to={'/'}>Home</Link>
+            </li>
+            <li>
+              <Link to={'/users'}>Users</Link>
+            </li>
+          </ul>
           {this.props.children}
           <Footer />
         </React.Fragment>
