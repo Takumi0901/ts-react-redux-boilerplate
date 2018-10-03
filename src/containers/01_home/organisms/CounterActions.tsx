@@ -6,6 +6,9 @@ import { Card, CardContent } from 'src/components/atoms/card/index'
 import { counterEnhancer, Props } from '../enhancers/Counter'
 
 const CounterActions: React.SFC<Props> = ({ counter, increment, decrement }) => {
+  console.log('*****************')
+  console.log('HHHHHHHHHHHHHH')
+  console.log('*****************')
   return (
     <Grid align={'center'}>
       <GridCol size={8}>

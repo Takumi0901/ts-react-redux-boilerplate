@@ -5,4 +5,5 @@ export interface IStore {
   routing: any
   counter: ICounter
   users: IUsers
+  form: any
 }

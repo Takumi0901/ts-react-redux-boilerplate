@@ -13,7 +13,7 @@ module.exports = {
   // Enable sourcemaps for debugging webpack's output.
   devtool: 'source-map',
 
-  mode: 'none',
+  mode: 'development',
   optimization: {
     splitChunks: {
       cacheGroups: {

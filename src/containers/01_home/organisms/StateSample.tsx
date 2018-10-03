@@ -6,6 +6,9 @@ import Grid from 'src/components/atoms/grid/index'
 import { Card, CardContent } from 'src/components/atoms/card/index'
 
 const StateSample: React.SFC<SampleProps> = props => {
+  console.log('*****************')
+  console.log('FFFFFFFFFFFFFFF')
+  console.log('*****************')
   return (
     <Grid align={'center'}>
       <GridCol size={8}>
