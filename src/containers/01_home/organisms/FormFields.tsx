@@ -1,46 +1,28 @@
 import * as React from 'react'
-import GridCol from 'src/components/atoms/grid/GridCol'
-import Grid from 'src/components/atoms/grid/index'
 import TextField from '@material-ui/core/TextField'
-import { InjectedFormProps, Field, getFormValues } from 'redux-form'
-import { connect } from 'react-redux'
-import { IStore } from 'src/redux/IStore'
-import { compose, lifecycle, HOC, onlyUpdateForKeys } from 'recompose'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
+import { Field } from 'redux-form'
+import { formEnhancer, Props } from '../enhancers/Form'
 
 const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
   <TextField hintText={label} floatingLabelText={label} errorText={touched && error} {...input} {...custom} />
 )
 
-type Props = {}
-
-type AllFormProps = Props & InjectedFormProps<FormData, Props>
-
-const FormFields: React.SFC<AllFormProps> = () => {
-  console.log('*****************')
-  console.log('HHHHHHHHHHHHHH')
-  console.log('*****************')
+const FormFields: React.SFC<Props> = () => {
   return (
-    <Grid align={'center'}>
-      <GridCol size={8}>
-        <h3>hgoehoge</h3>
+    <Card className={'u-mb-24'}>
+      <CardContent>
+        <Typography>hgoehoge</Typography>
+      </CardContent>
+      <CardContent>
         <Field component={renderTextField} name="search" type="text" />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <Field component={renderTextField} name="hgoehoge" type="text" />
-      </GridCol>
-    </Grid>
+      </CardContent>
+    </Card>
   )
 }
 
-const connector = connect((state: IStore) => {
-  return {
-    formProps: state.form
-  }
-})
-
-export const enhancer: HOC<Props, {}> = compose(connector)
-
-export default enhancer(FormFields)
+export const FormFieldsElement = formEnhancer(FormFields)

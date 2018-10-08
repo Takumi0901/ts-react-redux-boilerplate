@@ -1,31 +1,27 @@
 import * as React from 'react'
-import Button from 'src/components/atoms/button/index'
-import GridCol from 'src/components/atoms/grid/GridCol'
-import Grid from 'src/components/atoms/grid/index'
-import { Card, CardContent } from 'src/components/atoms/card/index'
+import Card from '@material-ui/core/Card'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 import { counterEnhancer, Props } from '../enhancers/Counter'
 
 const CounterActions: React.SFC<Props> = ({ counter, increment, decrement }) => {
-  console.log('*****************')
-  console.log('HHHHHHHHHHHHHH')
-  console.log('*****************')
   return (
-    <Grid align={'center'}>
-      <GridCol size={8}>
-        <Card>
-          <CardContent>
-            <h2>Hello World!!</h2>
-          </CardContent>
-          <CardContent>
-            <p className={'u-fz-18 u-fw-b u-mb-16'}>{counter.count}</p>
-            <p>
-              <Button name={'+'} color={'info'} classes={['u-mr-8']} onClick={() => increment(1)} />
-              <Button name={'-'} color={'caution'} onClick={() => decrement(-1)} />
-            </p>
-          </CardContent>
-        </Card>
-      </GridCol>
-    </Grid>
+    <Card className={'u-mb-24'}>
+      <CardContent>
+        <Typography color="textSecondary">Hello World!!</Typography>
+        <Typography color="textSecondary">{counter.count}</Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" onClick={() => increment(1)}>
+          +
+        </Button>
+        <Button size="small" onClick={() => decrement(-1)}>
+          -
+        </Button>
+      </CardActions>
+    </Card>
   )
 }
 

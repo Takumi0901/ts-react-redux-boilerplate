@@ -58,7 +58,7 @@ export const theme = {
     },
     maxWidth: '1200px',
     fontFamily: '"Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif',
-    fontSize: '62.5%',
+    fontSize: '14px',
     lineHeight: 1.6
   },
   font: {
