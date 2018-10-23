@@ -33,6 +33,7 @@ export interface IThemeInterface {
     black: string
     white: string
     grey: string
+    greyLight: string
     primary: string
     info: string
     action: string
@@ -68,6 +69,7 @@ export const theme = {
     black: '#333',
     white: '#fff',
     grey: '#626262',
+    greyLight: '#fafafa',
     primary: '#D35BFF',
     info: '#3273DC',
     action: '#00D1B1',

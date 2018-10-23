@@ -1,27 +1,21 @@
 import * as React from 'react'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
+import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { counterEnhancer, Props } from '../enhancers/Counter'
 
 const CounterActions: React.SFC<Props> = ({ counter, increment, decrement }) => {
   return (
-    <Card className={'u-mb-24'}>
-      <CardContent>
-        <Typography color="textSecondary">Hello World!!</Typography>
-        <Typography color="textSecondary">{counter.count}</Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" onClick={() => increment(1)}>
-          +
-        </Button>
-        <Button size="small" onClick={() => decrement(-1)}>
-          -
-        </Button>
-      </CardActions>
-    </Card>
+    <Paper className={'u-pt-24 u-pr-24 u-pb-24 u-pl-24 u-mb-24'} square elevation={0}>
+      <Typography variant="headline">Counter!!</Typography>
+      <Typography variant="display1">{counter.count}</Typography>
+      <Button variant="contained" color="primary" onClick={() => increment(1)}>
+        +
+      </Button>
+      <Button variant="contained" color="secondary" onClick={() => decrement(-1)}>
+        -
+      </Button>
+    </Paper>
   )
 }
 

@@ -6,13 +6,13 @@ export interface IUsers {
 
 export interface IUser {
   description?: string
-  facebook_id?: number
+  facebook_id?: string
   followees_count?: number
   followers_count?: number
   github_login_name?: string
   id?: string
   items_count?: number
-  linkedin_id?: number
+  linkedin_id?: string
   location?: string
   name?: string
   organization?: string
