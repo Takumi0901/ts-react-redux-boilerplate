@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import App from 'src/containers/00_app/App'
-import Home from 'src/containers/01_home/pages/Home'
-import Users from 'src/containers/02_users/pages/Users'
+import App from 'src/containers/app/App'
+import Home from 'src/containers/home/pages/Home'
+import Users from 'src/containers/users/pages/Users'
 
 export default (
   <React.Fragment>
