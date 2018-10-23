@@ -10,7 +10,7 @@ const baseStyles = (theme: IThemeInterface) => injectGlobal`
   }
   body {
     margin: 0;
-    background: ${theme.color.white};
+    background: ${theme.color.greyLight};
     color: ${theme.color.black};
     font-family: ${theme.base.fontFamily};
     font-size: 1em;
@@ -37,7 +37,7 @@ const baseStyles = (theme: IThemeInterface) => injectGlobal`
     font-weight: 800;
   }
   #root {
-    font-size: ${theme.font.size};
+     font-size: ${theme.font.size};
   }
   ${utilityStyles()}
 `

@@ -1,5 +1,6 @@
 import * as Redux from 'redux'
 import rootReducer from 'src/redux/RootReducer'
+import thunk from 'redux-thunk'
 import { IStore } from 'src/redux/IStore'
 
 const configureStore = (initialState?: IStore): Redux.Store<IStore> => {
@@ -10,9 +11,9 @@ const configureStore = (initialState?: IStore): Redux.Store<IStore> => {
       typeof window === 'object' && window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__']
         ? window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__']({})
         : Redux.compose
-    composes = composeEnhancers(Redux.applyMiddleware())
+    composes = composeEnhancers(Redux.applyMiddleware(thunk))
   } else {
-    composes = Redux.compose(Redux.applyMiddleware())
+    composes = Redux.compose(Redux.applyMiddleware(thunk))
   }
 
   return Redux.createStore(rootReducer, initialState, composes)
