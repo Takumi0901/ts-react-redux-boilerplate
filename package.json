@@ -1,14 +1,15 @@
 {
   "name": "ts-react-redux-boilerplate",
   "version": "1.0.0",
-  "description": "first commit",
-  "main": "index.js",
+  "description": "TypeScript + React + Redux boilerplate",
+  "main": "./bundle.js",
   "scripts": {
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hotOnly",
     "build": "./node_modules/webpack/bin/webpack.js --mode=development",
+    "build:prod": "./node_modules/webpack/bin/webpack.js -p --config webpack.production.config.js --profile --colors",
     "tslint": "tslint --fix **/*.tsx",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "_precommit": "lint-staged",
+    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
@@ -98,6 +99,7 @@
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7",
+    "webpack-merge": "^4.1.4",
     "why-did-you-update": "^0.1.1"
   }
 }
