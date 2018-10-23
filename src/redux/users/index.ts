@@ -1,5 +1,5 @@
-import { UsersRecord } from 'src/redux/records/users'
-import { IUser } from 'src/redux/types/users'
+import { UsersRecord } from 'src/redux/users/records'
+import { IUser } from 'src/redux/users/types'
 import actionCreatorFactory from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers/dist'
 
