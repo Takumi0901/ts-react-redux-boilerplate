@@ -1,7 +1,7 @@
 import config from './config'
 import axios from './_axios'
 import APIResponse from './response'
-import { IUser } from '../redux/types/users'
+import { IUser } from '../redux/users/types'
 
 export interface APIConfig {
   baseURL: string
