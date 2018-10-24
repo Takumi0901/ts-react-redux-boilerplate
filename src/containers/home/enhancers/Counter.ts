@@ -2,8 +2,8 @@ import * as Redux from 'redux'
 import { connect } from 'react-redux'
 import { IStore } from 'src/redux/IStore'
 import { compose, lifecycle, HOC, onlyUpdateForKeys } from 'recompose'
-import { decrement, increment } from 'src/redux/counter/index'
-import { ICounter } from 'src/redux/counter/types'
+import { decrement, increment } from 'src/redux/modules/counter/index'
+import { ICounter } from 'src/redux/modules/counter/types'
 
 export interface Props {
   increment(count: number): void

@@ -1,4 +1,4 @@
-import { CounterRecord } from 'src/redux/counter/records'
+import { CounterRecord } from 'src/redux/modules/counter/records'
 import actionCreatorFactory from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers/dist'
 

@@ -1,14 +1,14 @@
-import { UsersRecord } from 'src/redux/users/records'
-import { IUser } from 'src/redux/users/types'
+import { UsersRecord } from 'src/redux/modules/users/records'
+import { IUser } from 'src/redux/modules/users/types'
 import actionCreatorFactory from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers/dist'
 
 // Action types
 const actionCreator = actionCreatorFactory()
 export enum ActionTypes {
-  REQUEST = 'users/REQUEST',
-  SUCCESS = 'users/SUCCESS',
-  FAILED = 'users/FAILED'
+  REQUEST = 'get/users/REQUEST',
+  SUCCESS = 'get/users/SUCCESS',
+  FAILED = 'get/users/FAILED'
 }
 
 export const requestUsers = actionCreator<{ page: number; perPage: number }>(ActionTypes.REQUEST)
