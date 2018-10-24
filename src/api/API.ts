@@ -1,7 +1,6 @@
 import config from './config'
 import axios from './_axios'
-import APIResponse from './response'
-import { IUser } from '../redux/users/types'
+import APIResponse, { User } from './response'
 
 export interface APIConfig {
   baseURL: string
@@ -18,7 +17,7 @@ export interface API {
   setRetryStrategy: (
     fallback: (e: APIResponse<any>, retry: () => Promise<APIResponse<any>>) => Promise<APIResponse<any>>
   ) => void
-  getTest: (req: { page: number; perPage: number }) => Promise<APIResponse<IUser[]>>
+  getTest: (req: { page: number; perPage: number }) => Promise<APIResponse<User[]>>
 }
 
 export const factory = (config: APIConfig): API => {

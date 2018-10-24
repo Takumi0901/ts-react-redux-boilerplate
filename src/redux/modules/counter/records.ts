@@ -1,5 +1,5 @@
 import { Record } from 'immutable'
-import { ICounter } from 'src/redux/counter/types'
+import { ICounter } from 'src/redux/modules/counter/types'
 
 export class CounterRecord extends Record({ count: 0 }) implements ICounter {
   inc(payload: number) {

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { IStore } from 'src/redux/IStore'
 import { compose, lifecycle, HOC } from 'recompose'
-import { failedUsers, requestUsers, successUsers } from 'src/redux/users/index'
-import { IUsers } from 'src/redux/users/types'
+import { failedUsers, requestUsers, successUsers } from 'src/redux/modules/users/index'
+import { IUsers } from 'src/redux/modules/users/types'
 import API from 'src/api/API'
 
 export interface Props {

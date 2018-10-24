@@ -13,14 +13,14 @@ const CounterActions: React.SFC<Props> = props => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>permanent_id</TableCell>
+            <TableCell>permanentId</TableCell>
             <TableCell>id</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {props.users.list.map((e, key) => (
             <TableRow key={key}>
-              <TableCell>{e.permanent_id}</TableCell>
+              <TableCell>{e.permanentId}</TableCell>
               <TableCell>{e.id}</TableCell>
             </TableRow>
           ))}

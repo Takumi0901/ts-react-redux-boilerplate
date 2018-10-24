@@ -1,5 +1,5 @@
 import { Record } from 'immutable'
-import { IUsers } from 'src/redux/users/types'
+import { IUsers } from 'src/redux/modules/users/types'
 
 export class UsersRecord
   extends Record({ page: 1, perPage: 1, list: [], isFetching: false, isSucceeded: false, isFailed: false })
