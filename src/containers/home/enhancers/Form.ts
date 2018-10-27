@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { reduxForm, InjectedFormProps } from 'redux-form'
-import { compose, HOC } from 'recompose'
+import { compose } from 'recompose'
 
-type AllFormProps = Props & InjectedFormProps<FormData, Props>
+export type AllFormProps = Props & InjectedFormProps<FormData, Props>
 
 export interface Props {}
 
@@ -10,7 +10,7 @@ const connector = connect(() => {
   return {}
 })
 
-export const formEnhancer: HOC<AllFormProps, {}> = compose(
+export const formEnhancer = compose<AllFormProps, {}>(
   connector,
   reduxForm({
     form: 'sampleForm',

@@ -1,5 +1,5 @@
 import { withRouter } from 'react-router-dom'
-import { compose, HOC } from 'recompose'
+import { compose } from 'recompose'
 
 export interface Props {
   history: {
@@ -7,4 +7,4 @@ export interface Props {
   }
 }
 
-export const drawerEnhancer: HOC<Props, {}> = compose(withRouter)
+export const drawerEnhancer = compose<Props, {}>(withRouter)

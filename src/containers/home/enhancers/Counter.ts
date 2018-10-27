@@ -1,7 +1,7 @@
 import * as Redux from 'redux'
 import { connect } from 'react-redux'
 import { IStore } from 'src/redux/IStore'
-import { compose, lifecycle, HOC, onlyUpdateForKeys } from 'recompose'
+import { compose, lifecycle, onlyUpdateForKeys } from 'recompose'
 import { decrement, increment } from 'src/redux/modules/counter/index'
 import { ICounter } from 'src/redux/modules/counter/types'
 
@@ -20,7 +20,7 @@ const connector = connect(
   dispatch => Redux.bindActionCreators({ increment, decrement }, dispatch)
 )
 
-export const counterEnhancer: HOC<Props, {}> = compose(
+export const counterEnhancer = compose<Props, {}>(
   connector,
   onlyUpdateForKeys(['counter']),
   lifecycle({
