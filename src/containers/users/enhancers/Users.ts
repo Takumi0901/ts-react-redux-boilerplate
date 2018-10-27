@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import { IStore } from 'src/redux/IStore'
-import { compose, lifecycle, HOC } from 'recompose'
+import { compose, lifecycle } from 'recompose'
 import { failedUsers, requestUsers, successUsers } from 'src/redux/modules/users/index'
 import { IUsers } from 'src/redux/modules/users/types'
 import API from 'src/api/API'
 
 export interface Props {
-  getUsers(props: { page: 1; perPage: 20 }): void
   users: IUsers
+  getUsers(values: { page: number; perPage: number }): void
 }
 
 const mapStateToProps = (state: IStore) => state
@@ -18,16 +18,16 @@ const mergeProps = (state: IStore, { dispatch }, props: Props) => {
   return {
     ...props,
     users: state.users,
-    getUsers(props: { page: 1; perPage: 20 }) {
-      dispatch(requestUsers(props))
-      API.getTest(props)
+    getUsers(values) {
+      dispatch(requestUsers(values))
+      API.getTest(values)
         .then(res => dispatch(successUsers(res.body)))
         .catch(err => dispatch(failedUsers(err)))
     }
   }
 }
 
-export const usersEnhancer: HOC<Props, {}> = compose(
+export const usersEnhancer = compose<Props, {}>(
   connect(
     mapStateToProps,
     mapDispatchToProps,
